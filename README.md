@@ -1,9 +1,10 @@
 TODO:
--Logging
--Typescript?
--Dockerize
--Readme
--Postman Test File?
+- Logging
+- Typescript?
+- Dockerize
+- Readme
+- Postman Test File?
+- Licensing
 
 # This Is The Gwei
 
@@ -13,8 +14,6 @@ Description of the problem and the solution.
 
 NoGweiJose is a lorem ipsum etc etc
 
-- Type some Markdown on the left
-- ✨Magic ✨
 
 ## Features
 
@@ -39,7 +38,10 @@ ThisIsTheGwei uses the following technologies/libraries/APIs:
 The following are required for this application to run:
 
 - [Docker](http://docker.com) 
-- [Etherscan](https://etherscan.io/) API key. You can find out how to get one  at [https://docs.etherscan.io/getting-started/creating-an-account](https://docs.etherscan.io/getting-started/creating-an-account). The free account tier will work just fine - ThisIsTheGwei is designed to abide by the free tier rate limits.
+- [Etherscan](https://etherscan.io/) API key. 
+>You can find out how to get an API key at [https://docs.etherscan.io/getting-started/creating-an-account](https://docs.etherscan.io/getting-started/creating-an-account).
+>
+> The free account tier will work just fine - ThisIsTheGwei is designed to abide by the free tier rate limits.
 
 ## Installation
 
@@ -49,7 +51,7 @@ First, clone this repo:
 git clone https://github.com/elandsma/ThisIsTheGwei
 ```
 
-Then, open up the .env file and replace `Xyour_api_keyX` with your own unique API key from Etherscan (no quotation marks). 
+Then, open up the .env file and replace `Xyour_api_keyX` with your own unique API key from Etherscan (no quotation marks). Be careful not to edit anything else in this file.
 
 Now, in the terminal, run:
 ```sh
@@ -83,8 +85,13 @@ The data will remain persistent in the database for as long as the Docker contai
 
 
 
-
+## API
 The following endpoints are available for use:
+
+
+URL
+Params
+Sample
 
 
 
