@@ -1,6 +1,14 @@
 services:
+  app:
+    container_name: this_is_the_gwei_app
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    external_links:
+      - mongo
   db:
-    container_name: mongoDB
+    container_name: mongo
     image: mongo:latest
     restart: always
     ports:
