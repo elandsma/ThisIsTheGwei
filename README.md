@@ -32,7 +32,7 @@ ThisIsTheGwei uses the following technologies/libraries/APIs:
 - MongoDB - Chosen for simplicity because we are not handling relational data.
 - [Mongoose](https://github.com/Automattic/mongoose) - MongoDB Object Modeling Tool
 - [Docker] - containerization to reduce depencency isues.
-- [Etherscan.io APIs](https://etherscan.io/)
+- [Etherscan.io APIs](https://etherscan.io/) - Public API to retrieve gas prices.
 
 
 ## Requirements
