@@ -1,10 +1,10 @@
 TODO:
 - Logging
 - Typescript?
-- Dockerize
 - Readme
 - Postman Test File?
 - Licensing
+- refactor /average to show fromTime as Lowest db entry
 
 # This Is The Gwei
 
@@ -45,43 +45,42 @@ The following are required for this application to run:
 
 ## Installation
 
-Open a terminal and navigate to a working directory where you would like the application to live., then clone this repo:
-First, clone this repo:
+Open a terminal and navigate to a working directory where you would like the application to live, then clone this repo:
 ```shell
 git clone https://github.com/elandsma/ThisIsTheGwei
 ```
 
-Then, open up the .env file and replace `Xyour_api_keyX` with your own unique API key from Etherscan (no quotation marks). Be careful not to edit anything else in this file.
+Now open up the .env file and replace `your_api_key` with your own unique API key from Etherscan (no quotation marks around the API key). Be careful not to edit anything else in this file.
 
-Now, in the terminal, run:
+Now, in the terminal, run the following command:
 ```sh
 docker-compose up
 ```
 
+After Docker runs its magic✨, if all goes well you will see the following console messages:
 
-
-ThisIsTheGwei is deployed via Docker. By default, the Docker will expose port 3000. This can be changed in the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image by navigating to the root directory of the repo and running the following command directly from the root folder:
-
-```
-cd ThisIsTheGwei
-docker-compose up
+```console
+this_is_the_gwei_app  | Database Connection Established on mongodb://mongo:27017/this_is_the_gwei_app
+this_is_the_gwei_app  | Server running on port 3000
 ```
 
-This can be done locally, or you can deploy the docker container to a cloud computing service.
+ At this point, the application is usable. The application is exposed on port 3000, so if you are running this locally, you verify the deployment via the browser:
 
-Once the Docker image is built, the application will begin automatically. 
+http://localhost:3000
 
-You can verify the deployment by navigating to your server address in
-your browser:
-
+Or via shell:
 ```sh
-localhost:8000
+curl http://localhost:3000
 ```
+
+If you are deploying the application on a cloud server, simply replace `localhost` with the appropriate IP address or domain.
+
+
 
 ## Usage
 
 Upon start, the application will immediately begin querying the Etherscan API, and storing gas fee data into the local database.
-The data will remain persistent in the database for as long as the Docker container lives. That is, if you shut down and restart the Docker container, the data will persist. However, if you *remove* the image instance, the data from that image will be lost. 
+The data will remain persistent in the database for as long as the Docker container lives. That is to say, if you shut down and restart the Docker container, the data will persist; however if you *remove* the image instance, the data from that image will be lost. If you wish to have a clean slate, you may run ```docker-compose down``` to remove the images and their associated data.
 
 
 
@@ -99,7 +98,7 @@ Sample
 Average Returns price is in Gwei. The number will round to a *maximum* of 9 decimal places, where applicable. In other words, the average may be given down to maximum precision of 1 Wei. 
 
 
-## Development
+## Notes On Development
 
 This application was built for a technical assessment, as part of my candidacy for an internship position at a private company.
 
@@ -107,14 +106,15 @@ On technology choices:
 
 MongoDB was chosen as the database because of it's simplicity, as we are not dealing with complicated relational data.
 
-Etherscan was chosen as the external API due to the response speed and rate limits, which were both better than other options. 
+Etherscan was chosen as the external API for our price data, due to the response speed and rate limits, both of which surpassed other options. 
 
-
+"This Is The Gwei" is a play on the phrase "This Is The Way" from [The Mandalorian](https://en.wikipedia.org/wiki/The_Mandalorian). 
 
 If I had more time to keep developing this, I would:
-Use Typscript
-For the "/average" endpoint, I would place the lowest and highest timestamps that we calculated from into the response object. For instance, if we only had data from 10 to 20, and were queried for the average 5 to 25, the response object would show fromTime as 10 and toTime as 20, as opposed to showing that the average is from 5 to 25, because it misrepresents the data.
-
+- Use Typscript
+- For the "/average" endpoint, I would place the lowest and highest timestamps that we calculated from into the response object. For instance, if we only had data from 10 to 20, and were queried for the average 5 to 25, the response object would show fromTime as 10 and toTime as 20, as opposed to showing that the average is from 5 to 25, because it misrepresents the data.
+- Create formal unit tests
+- Develop a front-end UI
 
 
 ## License
