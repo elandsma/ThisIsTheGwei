@@ -1,5 +1,5 @@
 {
-    "name": "ThisIsTheGwei",
+    "name": "this_is_the_gwei",
     "version": "1.0.0",
     "description": "Gwei Price Utility",
     "main": "index.js",
