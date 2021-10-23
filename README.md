@@ -27,23 +27,36 @@ NoGweiJose is a lorem ipsum etc etc
 ThisIsTheGwei uses the following technologies/libraries/APIs:
 
 
-- [node.js] - I/O backend
-- [Express] - node.js network framework
-- [MongoDB] - Chosen for simplicity because we are not handling relational data.
+- node.js - I/O backend
+- Express - node.js network framework
+- MongoDB - Chosen for simplicity because we are not handling relational data.
 - [Mongoose](https://github.com/Automattic/mongoose) - MongoDB Object Modeling Tool
-- [Docker] 
-- [Etherscan]
+- [Docker] - containerization to reduce depencency isues.
+- [Etherscan.io APIs](https://etherscan.io/)
 
+
+## Requirements
+The following are required for this application to run:
+
+- [Docker](http://docker.com) 
+- [Etherscan](https://etherscan.io/) API key. You can find out how to get one  at [https://docs.etherscan.io/getting-started/creating-an-account](https://docs.etherscan.io/getting-started/creating-an-account). The free account tier will work just fine - ThisIsTheGwei is designed to abide by the free tier rate limits.
 
 ## Installation
 
-In order to use this application properly, you will need to get an API key from Etherscan.
-
+Open a terminal and navigate to a working directory where you would like the application to live., then clone this repo:
 First, clone this repo:
-```
+```shell
+git clone https://github.com/elandsma/ThisIsTheGwei
 ```
 
-Then, open up the .env file and replace Xyour_api_keyX with your own unique API key.
+Then, open up the .env file and replace `Xyour_api_keyX` with your own unique API key from Etherscan (no quotation marks). 
+
+Now, in the terminal, run:
+```sh
+docker-compose up
+```
+
+
 
 ThisIsTheGwei is deployed via Docker. By default, the Docker will expose port 3000. This can be changed in the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image by navigating to the root directory of the repo and running the following command directly from the root folder:
 
