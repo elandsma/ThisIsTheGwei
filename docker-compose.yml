@@ -1,0 +1,11 @@
+services:
+  db:
+    container_name: mongoDB
+    image: mongo:latest
+    restart: always
+    volumes:
+      - ./thisIsTheGwei:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE= thisIsTheGwei
+    ports:
+      - 27017:27017
