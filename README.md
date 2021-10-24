@@ -111,7 +111,7 @@ This application was built for a technical assessment, as consideration of my ca
 
 ### Technology choices:
 
-MongoDB was chosen as the database because of it's simplicity, as we are not dealing with relational data.
+MongoDB was chosen as the database because of its simplicity, as we are not dealing with relational data.
 
 Etherscan was chosen as the external API for our price data, due to the response speed and rate limits, both of which made it a superios choice when compared against other similar options. 
 
