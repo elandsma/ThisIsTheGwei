@@ -83,7 +83,7 @@ The following endpoints are available for use:
 GET "/gas"
 ```
 
-Returns a JSON object showing the most recent gas price in the database at three tiers (fast, average, low), the associated block number, and the time this data was added to the database (in Unix timestamp format).
+Returns a JSON object showing the most recent gas price in the database at three tiers (fast, average, low), the associated block number, and the time this data was added to the database (in Unix timestamp format). Gas is displayed in whole Gwei units.
 
 Sample return: 
 
@@ -99,6 +99,9 @@ GET "/average?fromTime=&toTime="
 Returns a JSON object showing the average gas price in the time interval between fromTime and toTime, inclusive, in Unix timestamp format. The return also shows the number of data points used to calculate this average so the user can make a judgement on how significant the data is.
 The reponse object will display the fromTime and the toTime as the earliest and latest datapoints used to make the calculation, as opposed to returning back the given parameters, in order to more accurately reflect the data.  
 
+The average price is returned in Gwei units, and the number will round to a *maximum* of 9 decimal places, where applicable. In other words, the average may be given down to maximum precision of 1 Wei. 
+
+
 Sample return: 
 
 ```
@@ -106,7 +109,6 @@ Sample return:
 ```
 
 
-The average price is returned in Gwei units, and the number will round to a *maximum* of 9 decimal places, where applicable. In other words, the average may be given down to maximum precision of 1 Wei. 
 
 
 
