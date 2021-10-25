@@ -2,10 +2,10 @@
 
 **This Is The Gwei** is a utility for viewing Ethereum gas fees.
 
-Gas fees are required to execute transactions on the Ethereum network. 
-You can read more about gas and fees on the official Ethereum developer documentation [here](https://ethereum.org/en/developers/docs/gas/).
+Gas fees are required to execute transactions on the Ethereum network. Gas fees fluctuate and are generally related to the amount of activity on the network. 
+You can read more about gas and fees on the official Ethereum developer documentation [here](https://ethereum.org/en/developers/docs/gas/). 
 
-**This Is The Gwei** helps developers and users to make more informed choices by storing gas fee data over time and enabling users to see current gas fees, as well as the average gas fee over a chosen time interval.
+**This Is The Gwei** helps developers and users to make more informed choices by storing gas fee data over time by enabling them to see current gas fees, as well as the average gas fee over a chosen time interval.
 
 ## Tech
 
@@ -27,7 +27,7 @@ The following are required for this application to run:
 - [Etherscan](https://etherscan.io/) API key. 
 >You can find out how to get an API key at [https://docs.etherscan.io/getting-started/creating-an-account](https://docs.etherscan.io/getting-started/creating-an-account).
 >
-> The free account tier will work just fine - ThisIsTheGwei is designed to abide by all Etherscan API rate limits.
+> The free account tier will work just fine; **This Is The Gwei** is designed to abide by all Etherscan API rate limits.
 
 ## Installation
 
@@ -119,7 +119,7 @@ This application was built for a technical assessment, as consideration of my ca
 
 MongoDB was chosen as the database because of its simplicity, as we are not dealing with relational data.
 
-Etherscan was chosen as the external API for our price data, due to the response speed and rate limits, both of which made it a superios choice when compared against other similar options. 
+Etherscan was chosen as the external API for our price data, due to the response speed and rate limits, both of which made it a superior choice when compared against other similar options. 
 
 "This Is The Gwei" is a play on the phrase "This Is The Way" from [The Mandalorian](https://en.wikipedia.org/wiki/The_Mandalorian). 
 
