@@ -4,17 +4,16 @@ TODO:
 - Readme
 - Postman Test File?
 - Licensing
-- refactor /average to show fromTime as Lowest db entry
 - 2 config files, or, place dev-defined variables in server.js file
 
 # This Is The Gwei
 
 **This Is The Gwei** is a utility for viewing Ethereum gas fees.
 
-Description of the problem and the solution.
+Gas fees are required to execute transactions on the Ethereum network. 
+You can read more about gas and fees on the official Ethereum developer documentation [here](https://ethereum.org/en/developers/docs/gas/).
 
-NoGweiJose is a lorem ipsum etc etc
-
+**This Is The Gwei** helps developers and users to make more informed choices by storing gas fee data over time and enabling users to see current gas fees, as well as the average gas fee over a chosen time interval.
 
 ## Features
 
@@ -117,7 +116,7 @@ The reponse object will display the fromTime and the toTime as the earliest and 
 Sample return: 
 
 ```
-{"Error":false,"Message":{"averageGasPrice":62.25,"fromTime":3,"toTime":1635122071456,"numberOfDataPointsInRange":24}}
+{"Error":false,"Message":{"averageGasPrice":62.25,"fromTime":3,"toTime":1635122071456,"pricesUsedToCalculateAverage":24}}
 ```
 
 
@@ -143,8 +142,7 @@ Etherscan was chosen as the external API for our price data, due to the response
 If I had more time to keep developing this, I would:
 
 
-- [ ] Use Typscript
-- [ ] For the "/average" endpoint, I would place the lowest and highest timestamps that we calculated from into the response object. For instance, if we only had data from 10 to 20, and were queried for the average 5 to 25, the response object would show fromTime as 10 and toTime as 20, as opposed to showing that the average is from 5 to 25, because it misrepresents the data.
+- [ ] Use Typescript
 - [ ] Create formal unit tests
 - [ ] Develop a front-end UI
 
