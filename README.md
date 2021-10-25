@@ -44,7 +44,7 @@ ETHERSCAN_APIKEY = WYRTGXZ57HKLCA7F3HDVLEKSG32PHLER04
 ```
 
 
-Now, in the terminal, run the following command:
+Now, in the terminal, run the following command from the root of the application directory:
 ```sh
 $ docker-compose up
 ```
