@@ -96,7 +96,8 @@ Returns a JSON object showing the most recent gas price in the database at three
 Sample return: 
 
 ```
-{"Error":false,"Message":{"FastGasPrice":85,"AverageGasPrice":84,"LowGasPrice":84,"UnixTime":1635129704067,"BlockNum":13483952}}```
+{"Error":false,"Message":{"FastGasPrice":85,"AverageGasPrice":84,"LowGasPrice":84,"UnixTime":1635129704067,"BlockNum":13483952}}
+```
 
 ##########
 ```
