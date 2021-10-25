@@ -23,7 +23,7 @@ function fetchGasPrices(){
     };
     
     const FULLAPIURL='https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey='+process.env.ETHERSCAN_APIKEY
-    console.log("fetching gas price..");
+    console.log("Fetching gas price...");
     axios.get(FULLAPIURL)
     .then(async res => {
         if (res.status===200){
@@ -31,7 +31,7 @@ function fetchGasPrices(){
                 throw new Error("API response message status not valid: "+JSON.stringify(res.data.result));
             }
             console.log("Succesful API call for data at block "+res.data.result.LastBlock)
-            //check if database is empty (without this, the next code block will break upon first database entry)
+            // Check if database is empty (without this, the next code block will break upon first database entry)
             if(await GasPricesModel.findOne()===null){
                 addToDatabase(res)
                 .then(console.log("First price added to database."))
@@ -39,8 +39,8 @@ function fetchGasPrices(){
                     console.error("Add to database failure: "+err)
                 ))
             }
-            //check to see if the response data is novel to the database, by comparing response LastBlock against the newest LastBlock (highest numbered LastBLock) in the database.
-            //this is necessary because we can query the API faster than the new block data might appear.
+            // Check to see if the response data is novel to the database, by comparing response LastBlock against the newest (highest numbered) LastBlock in the database.
+            // This is necessary because we can query the API faster than the new block data might appear.
             else{
                 let mostRecentPrice = await GasPricesModel.findOne().sort( { LastBlock: -1 } );
                 if(mostRecentPrice.LastBlock == res.data.result.LastBlock){

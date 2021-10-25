@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const GasPricesSchema = new mongoose.Schema({
     LastBlock:{
-        type: Number,
+        type: Number
     },
     FastGasPrice:{
         type: Number

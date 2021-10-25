@@ -22,7 +22,7 @@ mongoose.connect(process.env.DATABASE_URL, {
 const db = mongoose.connection
 db.on("error", error=> console.error("Mongo Error: "+error))
 db.once("open", ()=> {
-        console.log("Database Connection Established on "+process.env.DATABASE_URL)
+    console.log("Database Connection Established on "+process.env.DATABASE_URL)
 });
 
 function main(){
@@ -38,4 +38,4 @@ app.get("/", (req,res)=>{
 
 const routes = require('./routes/')
 app.use('/', routes);
-//everything in '/routes/index.js' is exposed and accessible directly from root unless otherwise specified. 
+// Everything in '/routes/index.js' is exposed and accessible directly from root unless otherwise specified. 
