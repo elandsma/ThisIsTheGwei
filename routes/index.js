@@ -17,7 +17,7 @@ router.get('/gas', async (req,res) =>{
             "Message": {
                 "FastGasPrice": mostRecentPrice.FastGasPrice,
                 "AverageGasPrice": mostRecentPrice.AverageGasPrice,
-                "SlowGasPrice": mostRecentPrice.SlowGasPrice,
+                "LowGasPrice": mostRecentPrice.LowGasPrice,
                 "UnixTime": mostRecentPrice.UnixTime,
                 "BlockNum": mostRecentPrice.LastBlock,
             }

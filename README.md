@@ -15,12 +15,6 @@ You can read more about gas and fees on the official Ethereum developer document
 
 **This Is The Gwei** helps developers and users to make more informed choices by storing gas fee data over time and enabling users to see current gas fees, as well as the average gas fee over a chosen time interval.
 
-## Features
-
-- feature 1
-- feature 2
-
-
 ## Tech
 
 ThisIsTheGwei utilizes:
@@ -85,7 +79,7 @@ If you are deploying the application on a cloud server, simply replace `localhos
 
 ## Usage
 
-Upon start, the application will immediately begin querying the Etherscan API and storing gas fee data into the local database. The data will remain persistent in the database for as long as the Docker container lives. That is to say, if you shut down and restart the Docker container, the data will persist; however if you *remove* the image instance, the data from that image will be lost. If you wish to have a clean slate, you may run ```docker-compose down``` to remove the images and their associated data.
+Upon start, the application will immediately begin querying the Etherscan API every 5 seconds and storing novel gas fee data into the local database. The data will remain persistent in the database for as long as the Docker container lives. That is to say, if you shut down and restart the Docker container, the data will persist; however if you *remove* the image instance, the data from that image will be lost. If you wish to have a clean slate, you may run ```docker-compose down``` to remove the images and their associated data.
 
 
 
@@ -102,8 +96,7 @@ Returns a JSON object showing the most recent gas price in the database at three
 Sample return: 
 
 ```
-{"Error":false,"Message":{"FastGasPrice":62,"AverageGasPrice":62,"UnixTime":1635121756688,"BlockNum":13483369}}
-```
+{"Error":false,"Message":{"FastGasPrice":85,"AverageGasPrice":84,"LowGasPrice":84,"UnixTime":1635129704067,"BlockNum":13483952}}```
 
 ##########
 ```
@@ -116,7 +109,7 @@ The reponse object will display the fromTime and the toTime as the earliest and 
 Sample return: 
 
 ```
-{"Error":false,"Message":{"averageGasPrice":62.25,"fromTime":3,"toTime":1635122071456,"pricesUsedToCalculateAverage":24}}
+{"Error":false,"Message":{"averageGasPrice":70.0625,"fromTime":1635129443719,"toTime":1635129759102,"pricesUsedToCalculateAverage":16}}
 ```
 
 
