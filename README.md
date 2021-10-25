@@ -5,7 +5,7 @@
 Gas fees are required to execute transactions on the Ethereum network. Gas fees fluctuate and are generally related to the amount of activity on the network. 
 You can read more about gas and fees on the official Ethereum developer documentation [here](https://ethereum.org/en/developers/docs/gas/). 
 
-**This Is The Gwei** helps developers and users to make more informed choices by storing gas fee data over time by enabling them to see current gas fees, as well as the average gas fee over a chosen time interval.
+**This Is The Gwei** helps developers and users to make more informed choices by storing gas fee data over time and enabling them to see current gas fees, as well as the average gas fee over a chosen time interval.
 
 ## Tech
 
