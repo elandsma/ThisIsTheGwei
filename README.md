@@ -1,11 +1,3 @@
-TODO:
-- Logging
-- Typescript?
-- Readme
-- Postman Test File?
-- Licensing
-- 2 config files, or, place dev-defined variables in server.js file
-
 # This Is The Gwei
 
 **This Is The Gwei** is a utility for viewing Ethereum gas fees.
@@ -17,7 +9,7 @@ You can read more about gas and fees on the official Ethereum developer document
 
 ## Tech
 
-ThisIsTheGwei utilizes:
+**This Is The Gwei** utilizes:
 
 
 - [Node.js](https://github.com/nodejs/node) - JavaScript runtime environment
@@ -136,10 +128,11 @@ Etherscan was chosen as the external API for our price data, due to the response
 If I had more time to keep developing this, I would:
 
 
-- [ ] Use Typescript
-- [ ] Create formal unit tests
-- [ ] Develop a front-end UI
+- [ ] Use Typescript. I don't have much experience with typescript but I am eager to learn, because type errors are a leading cause of bugs in JavaScript.
+- [ ] Implement unit testing (Maybe using [Mocha](https://mochajs.org/))
+- [ ] Develop a front-end that enables users to access the data via an intuitive and easy-to-use UI if they prefer.
+- [ ] Add logging to files instead of just sending everything to console.log, perhaps using a library such as [Winston](https://github.com/winstonjs/winston)
 
 ## License
 
-MIT
+**This Is The Gwei** is published on GitHub with an MIT license. 
