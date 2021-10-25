@@ -9,7 +9,7 @@ TODO:
 
 # This Is The Gwei
 
-This Is The Gwei is a utility for viewing Ethereum gas fees.
+**This Is The Gwei** is a utility for viewing Ethereum gas fees.
 
 Description of the problem and the solution.
 
@@ -48,7 +48,7 @@ The following are required for this application to run:
 
 Open a terminal and navigate to a working directory where you would like the application to live, then clone this repo:
 ```shell
-git clone https://github.com/elandsma/ThisIsTheGwei
+$ git clone https://github.com/elandsma/ThisIsTheGwei
 ```
 
 Then, open up the .env file and replace `YOUR-API-KEY-HERE` with your own unique API key from Etherscan (no quotation marks around the API key - simply replace the text). Be careful not to edit anything else in this file aside from this line. The line should look *similar* to this:
@@ -61,7 +61,7 @@ ETHERSCAN_APIKEY = WYRTGXZ57HKLCA7F3HDVLEKSG32PHLER04
 
 Now, in the terminal, run the following command:
 ```sh
-docker-compose up
+$ docker-compose up
 ```
 
 After Docker runs its magic✨, if all goes well you will see the following console messages:
@@ -77,7 +77,7 @@ http://localhost:3000
 
 Or via shell:
 ```sh
-curl http://localhost:3000
+$ curl http://localhost:3000
 ```
 
 If you are deploying the application on a cloud server, simply replace `localhost` with the appropriate IP address or domain.
@@ -93,12 +93,29 @@ Upon start, the application will immediately begin querying the Etherscan API an
 ## API
 The following endpoints are available for use:
 
+```
+GET "/gas"
+```
 
-URL
-Params
-Sample
+Returns a JSON object showing the most recent gas price in the database at three tiers (fast, average, low), the associated block number, and the time this data was added to the database (in Unix timestamp format).
+
+Sample return: 
+
+```
+{"Error":false,"Message":{"FastGasPrice":62,"AverageGasPrice":62,"UnixTime":1635121756688,"BlockNum":13483369}}
+```
 
 
+```
+GET "/average?fromTime=&toTime=""
+```
+
+Returns a JSON object showing the average gas price in the time interval between fromTime and toTime, inclusive, in Unix timeestamp format. The return also shows the number of data points used to calculate this average so the user can make a judgement on how significant the data is.
+Sample return: 
+
+```
+{"Error":false,"Message":{"averageGasPrice":62.25,"fromTime":3,"toTime":1635122071456,"numberOfDataPointsInRange":24}}
+```
 
 
 Average Returns price is in Gwei. The number will round to a *maximum* of 9 decimal places, where applicable. In other words, the average may be given down to maximum precision of 1 Wei. 
@@ -107,7 +124,7 @@ Average Returns price is in Gwei. The number will round to a *maximum* of 9 deci
 ## Development Notes
 
 ### Motivation
-This application was built for a technical assessment, as consideration of my candidacy for an internship position at a private company.
+This application was built for a technical assessment, as consideration of my candidacy for an internship position.
 
 ### Technology choices:
 
